@@ -10,20 +10,63 @@ body {
   text-align: center;
 }
 
-.menu {
-  background-color: rgba(255, 255, 255, 0.651);
-  /*color: #fffd96;*/
+nav {
+  width: 0;
+  height: 0;
+}
+
+.menu-button {
+  height: fit-content;
+  width: fit-content;
+  border: 0;
+  background-color: rgba(255, 255, 255, 0);
+  color: black;
+  z-index: 15;
+  position: absolute;
+  transform: translate(16vw, 14vh);
+}
+
+nav {
+  width: 0;
+  height: 0;
+}
+
+.menu-contents {
+  display: none;
+}
+
+.menu-expanded {
+  z-index: 15;
+  position: absolute;
+  transform: translate(25px, 25px);
   width: 20vw;
+  padding: 5rem;
+  padding-top: 2.5rem;
+  background-color: rgba(255, 255, 255, 0.651);
   height: 60vh;
   border: 0;
   border-radius: 25px;
-  padding: 5rem;
-  z-index: 10;
-  position: fixed;
-  transform: translate(25px, 25px);
 }
 
-#sky-container {
+.menu-expanded .menu-contents {
+  display: inline-block;
+  z-index: 15;
+}
+
+.menu-expanded .menu-button {
+  height: auto;
+  width: auto;
+  padding: 4%;
+  z-index: 15;
+  border: 0;
+  border-radius: 10px;
+  position: relative;
+  transform: translate(0, 0);
+  color: rgb(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.24);
+}
+
+#sky {
   position: absolute;
   width: 100vw;
   height: 100vh;
@@ -31,19 +74,19 @@ body {
 }
 
 #sun {
-  /*background-color: gold;*/
   width: 3rem;
   height: 3rem;
   border: 0;
   border-radius: 100%;
-  position: absolute;
-  transform: translate(80vw, 40vh);
-  z-index: 5;
-    cursor: grab;
+  position: inherit;
+  transform: translate(100vw, 100vh);
+  /*transform: translate(80vw, 40vh);*/
+  z-index: 10;
+  cursor: grab;
 }
 
 #sun:active {
-    cursor: grabbing;
+  cursor: grabbing;
 }
 
 /*$primary1: rgba(255, 196, 0, 0.8);
@@ -51,11 +94,10 @@ $primary2: rgba(255, 196, 0, 0);*/
 
 #sky-colour-primary {
   /*background-image: radial-gradient($primary1, $primary2);*/
-  position: inherit;
-  transform: translate(-50%, -50%);
+  position: absolute;
   height: 200vh !important;
   width: 200vw !important;;
-  z-index: 4;
+  z-index: 9;
 }
 
 /* SASS/SCSS Variables:
