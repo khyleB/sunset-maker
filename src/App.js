@@ -1,4 +1,5 @@
 import './App.css';
+import { useRef } from 'react';
 import { useState } from "react";
 import Draggable, {DraggableCore} from "react-draggable";
 import Cloud from './components/Cloud';
@@ -14,9 +15,26 @@ function App() {
     setActive(!isActive); 
    };
 
+  const twinkleRef = useRef(null);
+
+  const ToggleTwinkle = () => {
+    if (twinkleRef.current != null) {
+        setTimeout(() => {twinkleRef.current.style.opacity = 80;}, 500);
+        twinkleRef.current.style.opacity = 0;
+    } else {
+      console.log(twinkleRef);
+    }
+  };
+
   return (
       <div className="App">
         <div id="sky" style={{backgroundColor: `${backgroundColour}80`}}>
+
+          <div className="stars-twinkling" ref={twinkleRef} onLoad={() => {setInterval(() => {ToggleTwinkle()}, 160000)}} style={{transition: `.7s`, transitionTimingFunction: 'ease-in-out'}}/>
+          <div className="stars" style={{maskImage: `linear-gradient(${backgroundColour}FF, #00000000)`}}/>
+
+
+
           <nav className={isActive ? "menu-expanded" : "null"}>
             <div className="menu-contents">
               <h1>Menu</h1>
@@ -44,24 +62,26 @@ function App() {
 
           </nav>
 
-            <Draggable axis="both" defaultPosition={{x: -300, y: -450}} bounds={{left: -1000, top: -1500, right: 0, bottom: 0}}>
+            <Draggable axis="both" defaultPosition={{x: -120, y: -600}} bounds={{left: -3000, top: -2500, right: 0, bottom: 0}}>
 
-              <div id="sky-colour-primary"  style={{backgroundImage: `radial-gradient(${sunColour}80, #00000000)`}}>
-              <div id="sun" className="handle" style={{backgroundColor: `${sunColour}80`}}/>
+              <div id="sky-colour-primary"  style={{backgroundImage: `radial-gradient(${sunColour}B3, #00000000)`}}>
+              <div id="sun" className="handle" style={{backgroundColor: `${sunColour}FF`}} onDragOver={(event => this.onDragOver(event))}/>
               </div>
 
             </Draggable>
           
-          <Cloud cloudId="huge-cloud"/>
-          <Cloud cloudId="big-cloud"/>
-          <Cloud/>
-          <Cloud cloudId="med-cloud"/>
-          <Cloud cloudId="small-cloud"/>
-          <Cloud cloudId="tiny-cloud"/>
+            <div className="cloud-cover">
+              <Cloud cloudId="huge-cloud"/>
+              <Cloud cloudId="big-cloud"/>
+              <Cloud/>
+              <Cloud cloudId="med-cloud"/>
+              <Cloud cloudId="small-cloud"/>
+              <Cloud cloudId="tiny-cloud"/>
+            </div>
 
-          <div id="sky-colour-secondary" style={{backgroundImage: `linear-gradient(#00000000, ${horizonColour}99)`}}/>
+            <div id="sky-colour-secondary" style={{backgroundImage: `linear-gradient(#00000000, ${horizonColour}99)`}}/>
           </div>
-      </div>
+        </div>
   );
 }
 
