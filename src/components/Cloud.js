@@ -1,7 +1,5 @@
-import { Component } from "react";
 import { useRef } from "react";
 import cloud from "./imgs/cloud.svg";
-
 
 function Cloud(props) {
 

@@ -1,4 +1,6 @@
 body {
+  font-family: "Avantgarde", sans-serif;
+  color: rgb(118, 49, 163);
   width: 100vw;
   height: 100vh;
   position: fixed;
@@ -10,25 +12,49 @@ body {
   text-align: center;
 }
 
-nav {
-  width: 0;
-  height: 0;
+h1 {
+  font-family: "Rubik Bubbles", "Blippo", sans-serif;
+  font-size: 2em;
+  line-height: 0.5em;
+}
+
+button {
+  padding-top: 0.6em;
+  font-family: "Rubik Bubbles", "Blippo", sans-serif;
+  font-size: 1.7em;
+}
+
+#button-div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  width: fit-content;
+  height: fit-content;
+  background-image: url('components/imgs/cloud.svg');
+  height: 11rem;
+  width: 11rem;
+  transform: translate(45vw, 75vh);
+  z-index: 10;
 }
 
 .menu-button {
-  height: fit-content;
-  width: fit-content;
-  border: 0;
-  background-color: rgba(255, 255, 255, 0);
-  color: black;
-  z-index: 15;
-  position: absolute;
-  transform: translate(16vw, 14vh);
-}
+    height: 100%;
+    width: 100%;
+    border: 0;
+    z-index: 15;
+    position: inherit;
+    color: rgb(118, 49, 163);
+    background-color: transparent;
+  }
 
 nav {
   width: 0;
   height: 0;
+}
+
+input {
+  padding: .2em;
 }
 
 .menu-contents {
@@ -36,34 +62,23 @@ nav {
 }
 
 .menu-expanded {
-  z-index: 15;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
   position: absolute;
   transform: translate(25px, 25px);
   width: 20vw;
-  padding: 5rem;
-  padding-top: 2.5rem;
+  padding: 2.5rem 5rem;
   background-color: rgba(255, 255, 255, 0.651);
-  height: 60vh;
+  height: 45vh;
   border: 0;
   border-radius: 25px;
 }
 
 .menu-expanded .menu-contents {
   display: inline-block;
-  z-index: 15;
-}
-
-.menu-expanded .menu-button {
-  height: auto;
-  width: auto;
-  padding: 4%;
-  z-index: 15;
-  border: 0;
-  border-radius: 10px;
-  position: relative;
-  transform: translate(0, 0);
-  color: rgb(0, 0, 0);
-  background-color: rgba(0, 0, 0, 0.24);
+  z-index: 10;
 }
 
 #sky {
@@ -73,25 +88,16 @@ nav {
   z-index: 1;
 }
 
-.stars {
+#star-div {
   position: absolute;
   transform: translate(0, 0);
   width: 100vw;
   height: 100vh;
-  background-image: url('components/imgs/stars.png');
-  background-repeat: repeat;
   z-index: 2;
 }
-
-.stars-twinkling {
-  opacity: 0;
-  position: absolute;
-  transform: translate(0, 0);
-  width: 100vw;
-  height: 100vh;
-  background-image: url('components/imgs/shiningstars2.png');
+.stars {
+  background-image: url('components/imgs/stars.png');
   background-repeat: repeat;
-  z-index: 1;
 }
 
 #sun {
@@ -100,8 +106,7 @@ nav {
   border: 0;
   border-radius: 100%;
   position: inherit;
-  transform: translate(100vw, 100vh);
-  /*transform: translate(80vw, 40vh);*/
+  transform: translate(98.5vw, 97vh);
   z-index: 6;
   cursor: grab;
 }
@@ -110,28 +115,17 @@ nav {
   cursor: grabbing;
 }
 
-/*$primary1: rgba(255, 196, 0, 0.8);
-$primary2: rgba(255, 196, 0, 0);*/
-
 #sky-colour-primary {
-  /*background-image: radial-gradient($primary1, $primary2);*/
   position: absolute;
   height: 200vh !important;
   width: 200vw !important;;
   z-index: 5;
 }
 
-/* SASS/SCSS Variables:
-
-$secondary1: rgba(255, 0, 179, 0);
-$secondary2: rgba(255, 0, 179, 0.5);*/
-
-
 #sky-colour-secondary {
   position: absolute;
   width: 100vw;
   height:100vh;
-  /*background-image: linear-gradient($secondary1, $secondary2);*/
   z-index: 2;
 }
 
@@ -183,20 +177,28 @@ $secondary2: rgba(255, 0, 179, 0.5);*/
 }
 
 @media (max-width: 850px) {
+
+  button {
+    font-size: 1.5em;
+  }
+
+  #button-div {
+    height: 10rem;
+    width: 10rem;
+    transform: translate(73vw, 3vh);
+  }
+
   .menu-expanded {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    position: absolute;
+    background-color: rgba(255, 255, 255, 0.651);
+    border-radius: 25px;
     flex-wrap: wrap;
     width: 80%;
     margin: auto;
-    transform: translate(7%, 190%);
-    padding: 1.5rem;
+    transform: translate(9.5%, 120%);
+    padding: 1rem;
     padding-top: 0.5rem;
-    background-color: rgba(255, 255, 255, 0.651);
-    height: 30%;
-    border: 0;
-    border-radius: 25px;
+    height: fit-content;
   }
 
   input {
@@ -205,7 +207,6 @@ $secondary2: rgba(255, 0, 179, 0.5);*/
     margin: .7em;
     border: 0;
     height: 1em;
-    width: 7em;
     padding: 0;
   }
 
@@ -217,9 +218,53 @@ $secondary2: rgba(255, 0, 179, 0.5);*/
   br:nth-of-type(even) {
     display: none;
   }
-}
 
+  .cloud {
+    height: 15rem;
+    width: 15rem;
+    transform: translate(0vw, 35vh);
+  }
+  
+  #huge-cloud {
+    height: 13rem;
+    width: 13rem;
+    transform: translate(-55vw, 50vh);
+  }
+  
+  #big-cloud {
+    height: 12rem;
+    width: 12rem;
+    transform: translate(-35vw, 5vh);
+  }
+  
+  #med-cloud {
+    transform: translate(30vw, 50vh);
+  }
+  
+  #small-cloud {
+    height: 7rem;
+    width: 7rem;
+    transform: translate(20vw, 75vh);
+  }
+  
+  #tiny-cloud {
+    height: 7rem;
+    width: 7rem;
+    transform: translate(-43vw, 22vh);
+}
+}
 @media (max-width: 500px) {
+
+  button {
+    font-size: 1em;
+  }
+
+  #button-div {
+    height: 6rem;
+    width: 6rem;
+    transform: translate(67vw, 2vh);
+  }
+
   .menu-contents {
     display: none;
   }
@@ -239,7 +284,6 @@ $secondary2: rgba(255, 0, 179, 0.5);*/
     margin: .7em;
     border: 0;
     height: 1em;
-    width: 7em;
     padding: 0;
   }
 
@@ -254,18 +298,18 @@ $secondary2: rgba(255, 0, 179, 0.5);*/
   }
 
   .cloud {
-    height: 5rem;
-    width: 5rem;
+    height: 7rem;
+    width: 7rem;
   }
   
   #huge-cloud {
-    height: 10rem;
-    width: 10rem;
+    height: 13rem;
+    width: 13rem;
   }
   
   #big-cloud {
-    height: 7rem;
-    width: 7rem;
+    height: 10rem;
+    width: 10rem;
   }
   
   #med-cloud {
@@ -274,12 +318,32 @@ $secondary2: rgba(255, 0, 179, 0.5);*/
   }
   
   #small-cloud {
-    height: 2rem;
-    width: 2rem;
+    height: 3rem;
+    width: 3rem;
+    transform: translate(40vw, 80vh);
   }
   
   #tiny-cloud {
-    height: 2rem;
-    width: 2rem;
+    height: 3rem;
+    width: 3rem;
   }
+}
+
+
+@media (max-width: 500px) {
+    
+  .menu-expanded {
+    text-align: center;
+    position: absolute;
+    transform: translate(0%, 165%);
+    width: 100%;
+    padding: 0;
+    padding-top: 0;
+    padding-bottom: 1rem;
+    background-color: rgba(255, 255, 255, 0.651);
+    height: fit-content;
+    border: 0;
+    border-radius: 0;
+  }
+
 }
