@@ -1,18 +1,18 @@
 {
   "files": {
-    "main.css": "/sunset-maker/static/css/main.016bb09c.css",
-    "main.js": "/sunset-maker/static/js/main.56207a58.js",
+    "main.css": "/sunset-maker/static/css/main.03930461.css",
+    "main.js": "/sunset-maker/static/js/main.e9cc87f0.js",
     "static/js/787.85156aba.chunk.js": "/sunset-maker/static/js/787.85156aba.chunk.js",
     "static/media/future-sound.mp3": "/sunset-maker/static/media/future-sound.3ca812e603871bbac2a7.mp3",
     "static/media/stars.png": "/sunset-maker/static/media/stars.382226197c5308529c82.png",
     "index.html": "/sunset-maker/index.html",
     "static/media/cloud.svg": "/sunset-maker/static/media/cloud.6b51392e7574c348ce714c0a4b3c1ffa.svg",
-    "main.016bb09c.css.map": "/sunset-maker/static/css/main.016bb09c.css.map",
-    "main.56207a58.js.map": "/sunset-maker/static/js/main.56207a58.js.map",
+    "main.03930461.css.map": "/sunset-maker/static/css/main.03930461.css.map",
+    "main.e9cc87f0.js.map": "/sunset-maker/static/js/main.e9cc87f0.js.map",
     "787.85156aba.chunk.js.map": "/sunset-maker/static/js/787.85156aba.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.016bb09c.css",
-    "static/js/main.56207a58.js"
+    "static/css/main.03930461.css",
+    "static/js/main.e9cc87f0.js"
   ]
 }
