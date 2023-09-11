@@ -25,6 +25,9 @@ function App() {
 
   return (
       <div className="App">
+
+        <h2 id="size-limit" style={{backgroundColor: `${backgroundColour}FF`}}>This site is meant to be viewed on devices wider than 200px and taller than 405px - try rotating your phone to enjoy the sunset experience!</h2>
+
         <div id="sky" style={{backgroundColor: `${backgroundColour}FF`}}>
 
         <div id="button-div">
@@ -61,11 +64,12 @@ function App() {
               <br/><br/>
 
               <Music/>
-              <br/><br/>
+              
+              <p>(Click and drag the sun to change the time of day)</p>
             </div>
           </nav>
 
-            <Draggable axis="both" defaultPosition={{x: -120, y: -600}} bounds={{left: -3000, top: -2500, right: 0, bottom: 0}}>
+            <Draggable axis="both" defaultPosition={{x: -150, y: -100}} bounds={{left: -3000, top: -2500, right: 0, bottom: 0}}>
 
               <div id="sky-colour-primary"  style={{backgroundImage: `radial-gradient(60em 30em at center, ${sunColour}BF, #00000000)`}}>
               <div id="sun" className="handle" style={{backgroundColor: `${sunColour}FF`}} onDragOver={(event => this.onDragOver(event))}/>

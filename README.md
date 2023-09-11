@@ -1,4 +1,4 @@
-[![banner](src/imgs/Banner.png)](https://khyleb.github.io/sunset-maker/)
+[![banner](puclic/imgs/Banner.png)](https://khyleb.github.io/sunset-maker/)
 
 ## Table of Contents
 - [Description](#description)
