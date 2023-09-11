@@ -16,7 +16,7 @@ Another goal of this project was to become familiar with another Javascript libr
 - Functional and Class Components and the strengths & weaknesses of each
 - Deploying a react app using git, and using cPanel
 - How React's real-time updating affects functions such as "onload"
-- How to use & style React's native Draggable elements
+- How to use & style React's native Draggable elements without z-index conflicts
 
 # Credits
 
